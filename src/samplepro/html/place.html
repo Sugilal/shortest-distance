@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> TOURISM PLAN </title>
+        
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+        {% comment %} <link rel="stylesheet" href="home1.css"> {% endcomment %}
+        <style>
+            *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin sans',sans-serif;
+}
+header{
+    width: 100%;
+    height: 100vh;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTC_04dsvMFot2j9mIW61GUBSERCohaUbX8hA&usqp=CAU");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+nav{
+    width: 100%;
+    height: 15vh;
+    background: rgba(0,0,0,0.2);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+}
+nav .logo{
+    width: 25%;
+    text-align: center;
+
+}
+nav .menu{
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+}
+nav .menu a{
+    width: 25%;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+main{
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+section h3{
+    font-size: 35px;
+    font-weight: 200;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 2px black;
+}
+section h1{
+    margin: 30px  0 20px 0;
+    font-size: 55px;
+    font-weight: 700;
+    text-shadow: 2px 1px 5px black;
+    text-transform: uppercase;
+}
+section p{
+    font-size: 25px;
+    word-spacing: 2px;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 1px black;
+
+}
+section a{
+    padding: 12px 30px;
+    border-radius: 4px;
+    outline: none;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 500;
+text-decoration: none;
+letter-spacing: 1px;
+transition: all .5s ease;
+}
+section .btnone{
+    background: #00b894;
+    color: #000;
+
+}
+nav .menu a:first-child{
+    color:#00b894;
+}
+.change_content:after{
+    content: '';
+    animation: changetext 10s infinite linear;
+    color:#00b894;
+
+}
+.btnone:hover{
+    background: white;
+    color: #00b894;
+}
+
+ </style>
+   </head>
+    <body>
+        <header>
+            <nav>
+                <div class="logo"><h1 class="animated infinite heartBeat"> Mera Bharat </h1></div>
+                <div class="menu">
+                    <a href={% url 'home' %}> Home </a>
+                    <a href="#"> Gallery </a>
+                    <a href="#"> About </a>
+                    <a href="#"> Learn more </a>
+                </div>
+            </nav>
+            <main>
+            <section>
+            <form action="{% url 'store'%}" method="post">          
+              <label for="Source">select the source from nearer to the places</label>
+            <input type="text" id="id_source" class="form-control" name="source"  placeholder="source name" required="" autofocus="" autocomplete="off">
+                p><label for="id_cc_myself">Cc myself:</label>
+            <input type="checkbox" name="cc_myself" id="id_cc_myself"></p>
+           
+             {% csrf_token %}
+    {# This will display the radio button HTML for you #}
+              {{ form.as_p }}
+    {# You'll need a submit button or similar here to actually send the form #}
+            <input type="submit" value="Submit"/>
+            </form>
+            </section>
+            </main>
+        </header>
+    </body>
+</html>

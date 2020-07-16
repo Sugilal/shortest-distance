@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			The Generics
+		</title>
+		<meta>
+	</head>
+	<body>
+		<header>
+			<nav><ul>
+				<li> <a type="button" href={% url 'home' %} class="btn btn-primary btn-lg btn-block">HOME</a></li>
+				<li> <a type="button" href={% url 'store' %} class="btn btn-primary btn-lg btn-block">STORE</a></li>
+				<li> <a type="button" href={% url 'about' %} class="btn btn-primary btn-lg btn-block">ABOUT</a></li>
+			</ul>
+			</nav>
+		</header>
+		<hr>
+		<h1>The Generics</h1>
+		<section>
+		<h2>MUSIC</h2>
+			<div>
+				<div>
+					<strong>Album 1</strong>
+				</div>
+				<img src="download.png">
+				<div>
+				<br>
+					$19.99
+					<button role="button">ADD TO CART</button>
+				</div>
+			</div>
+			<div>
+				<div>
+					<strong>Album 2</strong>
+				</div>
+				<img src="download.png">
+				<div>
+				<br>
+					$9.99
+					<button role="button">ADD TO CART</button>
+				</div>
+			</div>
+			<div>
+				<div>
+					<strong>Album 3</strong>
+				</div>
+				<img src="download.png">
+				<div>
+				<br>
+					$14.99
+					<button role="button">ADD TO CART</button>
+				</div>
+			</div>
+			<div>
+				<div>
+					<strong>Album 4</strong>
+				</div>
+				<img src="download.png">
+				<div>
+				<br>
+					$12.99
+					<button role="button">ADD TO CART</button>
+				</div>
+			</div>
+		</section>
+		<section>
+		<h2>MERCH</h2>
+			<div>
+				<div>
+				<div>
+					<strong>T-shirt</strong>
+				</div>
+				<img src="download.png">
+				<div>
+				<br>
+					$19.99
+					<button role="button">ADD TO CART</button>
+				</div>
+				<div>
+				<div>
+					<strong>Coffee cup</strong>
+				</div>
+				<img src="download.png">
+				<div>
+				<br>
+					$6.99
+					<button role="button">ADD TO CART</button>
+				</div>
+			</div>
+		</section>
+		<section>
+		<form action="PageObjects" method="post">{% csrf_token %}
+		<h2>CART</h2>
+			<div>
+				ITEM
+				&lt;&gt;
+				PRICE
+				&lt;&gt;
+				QUANTITY
+			</div>
+			<hr>
+			<div>
+				<img src="download.png" width="100" height="100">
+				&lt;&gt;
+				T-Shirt
+				&lt;&gt;
+				$19.99
+				<label for="cars">Choose the places:</label>
+
+				 <select form="countrySelection" name="countrySelect" id="countrySelect" required>
+  				<option value="volvo">alagar</option>
+  				<option value="saab">Mark</option>
+  				<option value="mercedes">Gandhi museum</option>
+  				<option value="audi">Visal d maal</option>
+				</select>
+
+				<input type="submit" name="submit">
+				<button role="button">REMOVE</button>
+			</div>
+			</form>
+			<hr>
+			<div>
+				<img src="download.png" width="100" height="100">
+				&lt;&gt;
+				Album 3
+				&lt;&gt;
+				$9.99
+				<input type="number" value="2">
+				<button role="button">REMOVE</button>
+			</div>
+			<hr>
+			<div>
+			Total
+			$39.97
+			</div>
+			<br>
+			<button role="button">PURCHASE</button>
+			{% for student in details %}
+<tr>
+
+		<td>  {{ student.alagar_kovil}}   </td>
+
+
+
+	</tr>
+{% endfor %}
+		</section>
+	</body>
+	<footer>
+		<h3>The generics</h3>
+			<ul>
+				<li><a href="https://facebook.com"><img src="Facebook Logo.png"></a></li>
+				<li><a href="https://spotify.com"><img src="Spotify Logo.png"></a></li>
+				<li><a href="https://	youtube.com"><img src="Youtube Logo.png"></a></li>
+			</ul>
+	</footer>
+</html>
